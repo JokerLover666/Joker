@@ -1,0 +1,31 @@
+# 换行符统一策略
+# ------------------------------------------------------------------
+# 背景：Git for Windows 安装时会把 core.autocrlf 设为 true，
+#       导致「工作区 CRLF / 仓库 LF」的来回转换，并经常弹出
+#       "LF will be replaced by CRLF" 警告。
+# 这里的规则让换行符在仓库和工作区都保持 LF，跨平台协作时不会出现
+# 「整个文件都变了」的假改动。
+# ------------------------------------------------------------------
+
+# 默认：文本文件在仓库里统一存 LF，检出到工作区也用 LF
+* text=auto eol=lf
+
+# Windows 批处理和 PowerShell 脚本必须用 CRLF，否则可能无法执行
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+
+# 二进制文件：不要做换行符转换，也不要尝试合并
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.7z    binary
+*.xlsx  binary
+*.docx  binary
+*.pptx  binary
+*.exe   binary
+*.dll   binary
