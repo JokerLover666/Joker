@@ -3,8 +3,8 @@ print("欢迎使用Git")
 classmate = ['TOM', 'JACK', 'LILY']
 print(classmate)
 print(len(classmate))
-classmate[0]
-classmate[-1]
+print(classmate[0])
+print(classmate[-1])
 
 
 
