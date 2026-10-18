@@ -1,0 +1,9 @@
+# 构建与运行产物
+build_out.txt
+*.exe
+*.o
+*.obj
+
+# Python 缓存
+__pycache__/
+*.pyc
