@@ -26,13 +26,13 @@ isinstance(123, Iterable) # 整数是否可迭代
 def findMinAndMax(L):
     if len(L) == 0:
         return (None, None)
-    min = max = L[0]
+    min_val = max_val = L[0]
     for x in L:
-        if x < min:
-            min = x
-        if x > max:
-            max = x
-    return (min, max)
+        if x < min_val:
+            min_val = x
+        if x > max_val:
+            max_val = x
+    return (min_val, max_val)
 print(findMinAndMax([7, 1, 3, 9, 5]))
 #测试
 if findMinAndMax([]) != (None, None):
