@@ -30,14 +30,14 @@ def move(n, a, b, c):
         move(n - 1, b, a, c)   # ③ 那 n-1 个：从 b 借助 a 挪到 c
 move(3, 'A', 'B', 'C')
 #%%
-#斐波那契数列
-def fib(n):
+#斐波那契数列（递归）
+def fib_recursive(n):
     if n <= 2:                 # 基线：前两项都是 1
         return 1
-    return fib(n - 1) + fib(n - 2)   # 递推：前两项之和
-print(fib(10))
+    return fib_recursive(n - 1) + fib_recursive(n - 2)   # 递推：前两项之和
+print(fib_recursive(10))
 for i in range(1, 11):
-    print(fib(i))
+    print(fib_recursive(i))
 #%%
 #斐波那契数列（迭代）
 
@@ -52,6 +52,7 @@ print(fib_iter(10))
 for i in range(1, 11):
     print(fib_iter(i))
 #%%
+#斐波那契数列（迭代，另一种写法）
 def fib(n):
     a, b = 1, 1
     for _ in range(n - 1):
